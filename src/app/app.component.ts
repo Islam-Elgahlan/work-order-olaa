@@ -9,12 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
    langu = localStorage.getItem('lang');
   constructor(public translate: TranslateService) {
-    const defaultLang = 'en';
+    // const defaultLang = 'en';
     if (localStorage.getItem('lang') == null) {
-      this.onChangeLang(defaultLang)
+      this.onChangeLang('ar')
 
     }
-    this.onChangeLang(this.langu)
+    this.onChangeLang('ar')
 
   }
 
