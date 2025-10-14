@@ -6,12 +6,12 @@ import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
-    {path:'' , component:AllComponent},
-  {path:'work-orders' , component:AllComponent},
-  {path:'view/:id' , component:ViewComponent},
-  {path:'add' , component:AddComponent},
+  { path: '', component: AllComponent },
+  { path: 'work-orders', component: AllComponent },
+  { path: 'view/:id', component: ViewComponent },
+  { path: 'add', component: AddComponent },
   // {path:'edit-order/:id' , component:EditOrderComponent},
-  {path:'edit/:id' , component:EditComponent},
+  { path: 'edit/:id', component: EditComponent },
 
 ];
 

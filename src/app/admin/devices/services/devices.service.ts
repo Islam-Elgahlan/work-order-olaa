@@ -3,24 +3,27 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DevicesService {
-
-  constructor(private _HttpClient: HttpClient) { }
+  constructor(private _HttpClient: HttpClient) {}
 
   addNewDevice(data: any): Observable<any> {
-    return this._HttpClient.post('devices/create', data)
+    return this._HttpClient.post('devices/create', data);
   }
   getAllDevices(params: any): Observable<any> {
     return this._HttpClient.get('devices', { params: params });
   }
   getDevice(id: number): Observable<any> {
-    return this._HttpClient.get(`profile/get_user_by_id/${id}`);
+    return this._HttpClient.get(`devices/show/${id}`);
   }
   onEditDevice(data: any, id: number): Observable<any> {
-    return this._HttpClient.put(`profile/update_user_by_id/${id}`, data);
+    return this._HttpClient.put(`devices/update/${id}`, data);
   }
+  getDeviceWorkOrder(id: number): Observable<any> {
+    return this._HttpClient.get(`work-orders/orders_by_device/${id}`);
+  }
+
   // // Lookups
   // onGetAccountType(): Observable<any> {
   //   return this._HttpClient.get('work-orders/lookups/titles');

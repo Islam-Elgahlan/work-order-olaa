@@ -104,7 +104,7 @@
                                 </button>
 
                                 <button [routerLink]="['viewUser', item.id]" mat-menu-item
-                                    (click)="openDeviceDialog(item.id)">
+                                    [routerLink]="['view-device',item.id]">
                                     <mat-icon style="color: #05A0E1;">visibility</mat-icon>
                                     <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
                                 </button>

@@ -28,7 +28,6 @@
         "reports": "Reports",
         "myorders": "My Work Orders",
         "devices": "Devices"
-
     },
     "users": {
         "users": "Users",
@@ -106,6 +105,7 @@
         "mobile": "Phone number",
         "equipment": "Equipment",
         "source": "Source",
+        "device": "Device",
         "description": "Description",
         "actions": "Actions",
         "view": "View",
@@ -200,15 +200,31 @@
         "end": "End Date",
         "print": "print"
     },
-    "devices":{
-        "active":"Active",
-        "notActive" : "Under Maintenance",
+    "devices": {
+        "active": "Active",
+        "notActive": "Under Maintenance",
         "type": "Type",
-        "buy_date" : "Buy Date",
-        "last_maintenance" : "Last Maintenance",
+        "buy_date": "Buy Date",
+        "last_maintenance": "Last Maintenance",
         "name": "Device name",
-        "company" : "Company"
-
-
+        "company": "Company",
+        "details": "devices Details",
+        "add": "Add New device",
+        "department": "department",
+        "model": "model",
+        "serial_number": "Serial Number",
+        "purchase_date": "Purchase Date",
+        "warranty_period": "Warranty Period",
+        "basic_information": "Basic information",
+        "description": "Description",
+        "record_work_orders": "Record work orders on the device",
+        "view_more": "View more",
+        "work_order_number": "Work Order Number",
+        "order_type": "Order Type",
+        "creation_date": "Creation Date",
+        "execution_date": "Execution Date",
+        "in_progress": "In Progress",
+        "edit": "Edit",
+        "close": "Close"
     }
 }

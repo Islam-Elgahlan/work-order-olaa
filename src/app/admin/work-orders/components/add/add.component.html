@@ -7,8 +7,9 @@
                         <div class="col-md-6">
                             <div class="title mb-2">
                                 <span>{{'welcome' | translate}}</span>
-                                <p><a routerLink="/dashboard/admin/work-orders">{{'orders.orders' | translate}}</a> > > <span>{{ isUpdatePage ? ('orders.editOrder' | translate) : ('orders.addOrder' |
-                                    translate) }}</span></p>
+                                <p><a routerLink="/dashboard/admin/work-orders">{{'orders.orders' | translate}}</a> > >
+                                    <span>{{ isUpdatePage ? ('orders.editOrder' | translate) : ('orders.addOrder' |
+                                        translate) }}</span></p>
 
                                 <!-- <h3 class="fs-3">
                                     {{ isUpdatePage ? ('orders.editOrder' | translate) : ('orders.addOrder' |
@@ -151,6 +152,17 @@
                                     <mat-label>{{'orders.source'| translate}}</mat-label>
                                     <mat-select formControlName="source_id">
                                         <mat-option *ngFor="let item of source" [value]="item.id">
+                                            {{item.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <!-- Devices -->
+                            <div *ngIf="deviceId" class="col-md-4">
+                                <mat-form-field class="w-100" [hideRequiredMarker]="hideRequiredMarker">
+                                    <mat-label>{{'orders.device'| translate}}</mat-label>
+                                    <mat-select [(ngModel)]="deviceId" >
+                                        <mat-option *ngFor="let item of devices" [value]="item.id">
                                             {{item.name}}
                                         </mat-option>
                                     </mat-select>
