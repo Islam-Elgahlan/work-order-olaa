@@ -12,7 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent {
-    ngOnInit() {
+  ngOnInit() {
     this.getOrderById(this.orderId)
     this.getworkType()
     this.getBuilding()
@@ -20,7 +20,7 @@ export class AddComponent {
     this.getSource()
     this.getReport()
     this.getDepartment()
-  
+
   }
 
   constructor(
@@ -29,13 +29,16 @@ export class AddComponent {
     private _LookupsService: LookupsService,
     private _ToastrService: ToastrService,
     private _Router: Router,
-    private _HelperService:HelperService
+    private _HelperService: HelperService
   ) {
+    this.deviceId = _activateRoute.snapshot.paramMap.get('deviceId');
+    console.log(this.deviceId);
+    
     this.orderId = this._activateRoute.snapshot.paramMap.get('id')
-    if(this.orderId){
+    if (this.orderId) {
       this.isUpdatePage = true;
 
-    }else{
+    } else {
       this.isUpdatePage = false;
     }
   }
@@ -51,12 +54,13 @@ export class AddComponent {
   source: any
   report: any
   departments: any
-  departmentId:any
-  supervisor:any
-  engineers:any 
-  technicians:any
-  start_date:any
-  date:any
+  departmentId: any
+  supervisor: any
+  engineers: any
+  technicians: any
+  start_date: any
+  date: any
+  deviceId:any
 
   hide: boolean = true;
   confirmHide: boolean = true;
@@ -67,8 +71,8 @@ export class AddComponent {
       start_date: new FormControl(null),
       start_time: new FormControl(new Date().toTimeString().split(' ')[0], [Validators.required]),
       department_id: new FormControl(null, [Validators.required]),
-      engineer_id: new FormControl(null,[Validators.required] ),
-      technician_id: new FormControl(null,[Validators.required]),
+      engineer_id: new FormControl(null, [Validators.required]),
+      technician_id: new FormControl(null, [Validators.required]),
       work_type_id: new FormControl(null, [Validators.required]),
       building_id: new FormControl(null, [Validators.required]),
       floor_no: new FormControl(null, [Validators.required]),
@@ -86,7 +90,7 @@ export class AddComponent {
     }
   );
 
-    onSubmit(data: FormGroup) {
+  onSubmit(data: FormGroup) {
     if (this.orderId) {
       // Edit Order
       let myData = new FormData();
@@ -120,7 +124,7 @@ export class AddComponent {
       }
       myData.append('start_date', data.value.start_date.toISOString().slice(0, 10));
 
-      
+
       this._WorkOrdersService.addNewOrder(myData).subscribe({
         next: (res) => {
           this.data = res
@@ -207,11 +211,11 @@ export class AddComponent {
     this._LookupsService.getDepartment().subscribe(
       (res) => {
         this.departments = res.data
-     
+
       }
     )
   }
-  onselectDepartment(){
+  onselectDepartment() {
     this.supervisor = 'ssss'
     this.getengineers(this.departmentId)
     this.gettechnicians(this.departmentId)
