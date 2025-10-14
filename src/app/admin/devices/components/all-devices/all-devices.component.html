@@ -97,11 +97,11 @@
                                 <mat-icon>more_vert</mat-icon>
                             </button>
                             <mat-menu #menu="matMenu">
-                                <button mat-menu-item>
+                                <!-- <button mat-menu-item>
                                     <mat-icon>block</mat-icon>
                                     <span>{{ item.is_active ==1 ? ('users.block' | translate) : ('users.unBlock' |
                                         translate) }} </span>
-                                </button>
+                                </button> -->
 
                                 <button [routerLink]="['viewUser', item.id]" mat-menu-item
                                     [routerLink]="['view-device',item.id]">
