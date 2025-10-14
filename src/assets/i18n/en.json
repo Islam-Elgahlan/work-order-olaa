@@ -105,6 +105,7 @@
         "mobile": "Phone number",
         "equipment": "Equipment",
         "source": "Source",
+        "device": "Device",
         "description": "Description",
         "actions": "Actions",
         "view": "View",

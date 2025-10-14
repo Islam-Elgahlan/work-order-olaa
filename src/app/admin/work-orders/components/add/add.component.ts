@@ -5,6 +5,7 @@ import { LookupsService } from 'src/app/services/lookups.service';
 import { ToastrService } from 'ngx-toastr';
 import { HelperService } from 'src/app/services/helper.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DevicesService } from 'src/app/admin/devices/services/devices.service';
 
 @Component({
   selector: 'app-add',
@@ -20,7 +21,8 @@ export class AddComponent {
     this.getSource()
     this.getReport()
     this.getDepartment()
-
+    this.onGetAllDevices()
+    this.getDeviceById(this.deviceId)
   }
 
   constructor(
@@ -29,11 +31,12 @@ export class AddComponent {
     private _LookupsService: LookupsService,
     private _ToastrService: ToastrService,
     private _Router: Router,
-    private _HelperService: HelperService
+    private _HelperService: HelperService,
+    private _devicesService: DevicesService
   ) {
     this.deviceId = _activateRoute.snapshot.paramMap.get('deviceId');
     console.log(this.deviceId);
-    
+
     this.orderId = this._activateRoute.snapshot.paramMap.get('id')
     if (this.orderId) {
       this.isUpdatePage = true;
@@ -60,11 +63,17 @@ export class AddComponent {
   technicians: any
   start_date: any
   date: any
-  deviceId:any
+  deviceId: any
+  deviceData: any
 
   hide: boolean = true;
   confirmHide: boolean = true;
   hideRequiredMarker: boolean = true;
+
+  // tableResponse: any | undefined;
+  devices: any[] | undefined = [];
+  pageSize: number | undefined = 5;
+  page: number | undefined = 1;
 
   orderForm = new FormGroup(
     {
@@ -83,10 +92,7 @@ export class AddComponent {
       equipment_id: new FormControl(null, [Validators.required]),
       description: new FormControl(null, [Validators.required]),
       priority: new FormControl("high", [Validators.required]),
-      type: new FormControl("maintenance", [Validators.required])
-
-
-
+      type: new FormControl("maintenance", [Validators.required]),
     }
   );
 
@@ -164,7 +170,6 @@ export class AddComponent {
           equipment_id: this.currentOrder?.equipment.id,
           source_id: this.currentOrder?.source.id,
           description: this.currentOrder?.description,
-
         })
 
       }
@@ -237,5 +242,28 @@ export class AddComponent {
         this.technicians = res.data;
       }
     )
+  }
+  onGetAllDevices() {
+    let params = {
+      page_size: this.pageSize,
+      page: this.page,
+    };
+    this._devicesService.getAllDevices(params).subscribe({
+      next: (res) => {
+        // this.tableResponse = res;
+        this.devices = res?.data;
+        // console.log(this.tableResponse.meta.total);
+        console.log(this.devices);
+      }
+    });
+  }
+  getDeviceById(id: number) {
+    this._devicesService.getDevice(id).subscribe({
+      next: (res) => {
+        this.deviceData = res.data;
+        console.log(this.deviceData);
+
+      }
+    });
   }
 }

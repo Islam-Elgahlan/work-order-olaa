@@ -4,7 +4,6 @@
       <div class="details-header d-flex justify-content-between">
         <div class="d-flex align-items-center gap-2">
           <h6>{{ "devices.details" | translate }}</h6>
-          <!-- dashboard/admin/devices/view-device/1/dashboard/admin/work-orders/add/1 -->
           <button [routerLink]="['add-work-order', deviceData.id]" class="btn btn-outline-info">
             {{ "devices.add" | translate }}
           </button>
@@ -121,7 +120,7 @@
         </div>
         <div class="d-flex justify-content-end my-3">
           <button class="btn btn-primary mx-2 w-25">{{ "devices.edit" | translate }}</button>
-          <button class="btn bg-btn-close w-25">{{ "devices.close" | translate }}</button>
+          <a routerLink="/dashboard/admin/devices" class="btn bg-btn-close w-25">{{ "devices.close" | translate }}</a>
         </div>
       </div>
     </div>
