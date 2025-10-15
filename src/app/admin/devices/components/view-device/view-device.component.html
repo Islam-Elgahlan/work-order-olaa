@@ -89,7 +89,7 @@
                 <span class="me-2 fw-bold">فني {{work.technician.name}}</span>
               </div>
               <div class="ms-3">
-                <p>{{ work.created_at | date}}</p>
+                <p>{{ work.start_date | date}}</p>
               </div>
             </div>
             <hr class="my-2" />
@@ -105,7 +105,7 @@
                 </div>
                 <div>
                   <h6>{{ "devices.creation_date" | translate }}</h6>
-                  <p>{{ work.start_date | date}}</p>
+                  <p>{{ work.created_at | date}}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.execution_date" | translate }}</h6>
