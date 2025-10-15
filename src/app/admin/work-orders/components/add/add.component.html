@@ -158,12 +158,22 @@
                                 </mat-form-field>
                             </div>
                             <!-- Devices -->
-                            <div *ngIf="deviceId" class="col-md-4">
+                            <div *ngIf="!deviceId" class="col-md-4">
                                 <mat-form-field class="w-100" [hideRequiredMarker]="hideRequiredMarker">
                                     <mat-label>{{'orders.device'| translate}}</mat-label>
                                     <mat-select [(ngModel)]="deviceId" >
                                         <mat-option *ngFor="let item of devices" [value]="item.id">
                                             {{item.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div *ngIf="deviceId" class="col-md-4">
+                                <mat-form-field class="w-100" [hideRequiredMarker]="hideRequiredMarker">
+                                    <mat-label>{{'orders.device'| translate}}</mat-label>
+                                    <mat-select [disabled]="true" [value]="deviceId"  >
+                                        <mat-option [value]="deviceId" >
+                                            {{deviceData.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>

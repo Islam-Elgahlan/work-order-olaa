@@ -89,7 +89,7 @@
                 <span class="me-2 fw-bold"> {{work.technician}}فني</span>
               </div>
               <div class="ms-3">
-                <p>14 AUG 2025</p>
+                <p>{{ work.start_date | date}}</p>
               </div>
             </div>
             <hr class="my-2" />
@@ -99,9 +99,9 @@
                   <h6>{{ "devices.work_order_number" | translate }}</h6>
                   <p>{{ work.number }}</p>
                 </div>
-                <div >
+                <div>
                   <h6>{{ "devices.order_type" | translate }}</h6>
-                  <p>{{ work }}</p>
+                  <p>{{ work.work_type.name }}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.creation_date" | translate }}</h6>
@@ -109,7 +109,7 @@
                 </div>
                 <div>
                   <h6>{{ "devices.execution_date" | translate }}</h6>
-                  <p>{{ deviceData?.serial_number }}</p>
+                  <p>{{ deviceData.start_date }}</p>
                 </div>
               </div>
               <div>
