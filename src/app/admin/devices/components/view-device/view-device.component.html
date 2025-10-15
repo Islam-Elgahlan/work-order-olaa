@@ -61,9 +61,7 @@
             </div>
           </div>
           <div class="col-md-4 justify-content-center my-3">
-            <a>
-              <img src="../../../../../assets/images/view-device.png" alt="view-device" />
-            </a>
+              <img [src]="deviceData.qr_code" [alt]="deviceData.model.name" class="w-25" />
           </div>
         </div>
       </div>
