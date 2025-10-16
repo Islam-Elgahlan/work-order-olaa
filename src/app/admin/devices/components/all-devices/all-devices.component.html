@@ -62,61 +62,63 @@
         </div>
         <!-- table -->
         <div class="container all-orders mt-3">
-            <table class="custom-table">
-                <thead class="text-capitalize">
-                    <th class="px-2 alone">#</th>
-                    <th class="alone">{{'devices.name' | translate}}</th>
-                    <th class="alone">{{'devices.type' | translate}}</th>
-                    <th class="alone">{{'devices.company' | translate}}</th>
-                    <th class="alone">{{'users.department' | translate}}</th>
-                    <th class="alone">{{'devices.buy_date' | translate}}</th>
-                    <th class="alone">{{'devices.last_maintenance' | translate}}</th>
-                    <th class="alone">{{'users.status' | translate}}</th>
-                    <th class="alone">{{'orders.actions' | translate}}</th>
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead class="text-capitalize">
+                        <th class="px-2 alone">#</th>
+                        <th class="alone">{{'devices.name' | translate}}</th>
+                        <th class="alone">{{'devices.type' | translate}}</th>
+                        <th class="alone">{{'devices.company' | translate}}</th>
+                        <th class="alone">{{'users.department' | translate}}</th>
+                        <th class="alone">{{'devices.buy_date' | translate}}</th>
+                        <th class="alone">{{'devices.last_maintenance' | translate}}</th>
+                        <th class="alone">{{'users.status' | translate}}</th>
+                        <th class="alone">{{'orders.actions' | translate}}</th>
 
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of tableData; let isEven = even">
-                        <td class="px-2 py-0">{{ item.id }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.type.name }}</td>
-                        <td>{{ item.company.name }}</td>
-                        <td>{{ item.department.name }}</td>
-                        <td>{{ item.buy_date }}</td>
-                        <td>{{ item.buy_date }}</td>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tableData; let isEven = even">
+                            <td class="px-2 py-0">{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.type.name }}</td>
+                            <td>{{ item.company.name }}</td>
+                            <td>{{ item.department.name }}</td>
+                            <td>{{ item.buy_date }}</td>
+                            <td>{{ item.buy_date }}</td>
 
-                        <!-- <td>{{ item.status.name }}</td> -->
-                        <td>
-                            <span class="status px-4" [class]="item.is_active ? 'active' : 'notActive'">{{
-                                item.is_active==1 ?
-                                ('devices.active' | translate) : ('devices.notActive'| translate) }}</span>
-                        </td>
-                        <td class="text-center">
-                            <button mat-icon-button [matMenuTriggerFor]="menu"
-                                aria-label="Example icon-button with a menu">
-                                <mat-icon>more_vert</mat-icon>
-                            </button>
-                            <mat-menu #menu="matMenu">
-                                <!-- <button mat-menu-item>
+                            <!-- <td>{{ item.status.name }}</td> -->
+                            <td>
+                                <span class="status px-4" [class]="item.is_active ? 'active' : 'notActive'">{{
+                                    item.is_active==1 ?
+                                    ('devices.active' | translate) : ('devices.notActive'| translate) }}</span>
+                            </td>
+                            <td class="text-center">
+                                <button mat-icon-button [matMenuTriggerFor]="menu"
+                                    aria-label="Example icon-button with a menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <!-- <button mat-menu-item>
                                     <mat-icon>block</mat-icon>
                                     <span>{{ item.is_active ==1 ? ('users.block' | translate) : ('users.unBlock' |
                                         translate) }} </span>
                                 </button> -->
 
-                                <button [routerLink]="['viewUser', item.id]" mat-menu-item
-                                    [routerLink]="['view-device',item.id]">
-                                    <mat-icon style="color: #05A0E1;">visibility</mat-icon>
-                                    <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
-                                </button>
-                                <button [routerLink]="['edit',item.id]" mat-menu-item>
-                                    <mat-icon style="color: #feee00;">edit_square</mat-icon>
-                                    <span style="color: #feee00;">{{'edit'|translate}}</span>
-                                </button>
-                            </mat-menu>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                    <button [routerLink]="['viewUser', item.id]" mat-menu-item
+                                        [routerLink]="['view-device',item.id]">
+                                        <mat-icon style="color: #05A0E1;">visibility</mat-icon>
+                                        <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
+                                    </button>
+                                    <button [routerLink]="['edit',item.id]" mat-menu-item>
+                                        <mat-icon style="color: #feee00;">edit_square</mat-icon>
+                                        <span style="color: #feee00;">{{'edit'|translate}}</span>
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <!-- Pagination -->

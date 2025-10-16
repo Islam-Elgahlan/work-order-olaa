@@ -62,46 +62,48 @@
     </div>
     <!-- table -->
     <div class="container all-orders mt-3">
-      <table class="custom-table">
-        <thead class="text-capitalize">
-          <th class="px-2 alone">{{'users.user' | translate}}</th>
-          <th class="alone">{{'users.status' | translate}}</th>
-          <th class="alone">{{'users.mobile' | translate}}</th>
-          <th class="alone">{{'users.email' | translate}}</th>
-          <th class="alone">{{'users.actions' | translate}}</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of tableData; let isEven = even">
-            <td class="px-2 py-0">{{ item.name }}</td>
-            <td>
-              <span class="status px-4" [class]="item.is_active ? 'active' : 'notActive'">{{ item.is_active==1 ?
-                ('users.active' | translate) : ('users.notActive'| translate) }}</span>
-            </td>
-            <td>{{ item.mobile }}</td>
-            <td>{{ item.email }}</td>
-            <td class="text-center">
-              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="openBlockDialog(item)">
-                  <mat-icon>block</mat-icon>
-                  <span>{{ item.is_active ==1 ? ('users.block' | translate) : ('users.unBlock' | translate) }} </span>
+      <div class="table-responsive">
+        <table class="custom-table">
+          <thead class="text-capitalize">
+            <th class="px-2 alone">{{'users.user' | translate}}</th>
+            <th class="alone">{{'users.status' | translate}}</th>
+            <th class="alone">{{'users.mobile' | translate}}</th>
+            <th class="alone">{{'users.email' | translate}}</th>
+            <th class="alone">{{'users.actions' | translate}}</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of tableData; let isEven = even">
+              <td class="px-2 py-0">{{ item.name }}</td>
+              <td>
+                <span class="status px-4" [class]="item.is_active ? 'active' : 'notActive'">{{ item.is_active==1 ?
+                  ('users.active' | translate) : ('users.notActive'| translate) }}</span>
+              </td>
+              <td>{{ item.mobile }}</td>
+              <td>{{ item.email }}</td>
+              <td class="text-center">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
                 </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="openBlockDialog(item)">
+                    <mat-icon>block</mat-icon>
+                    <span>{{ item.is_active ==1 ? ('users.block' | translate) : ('users.unBlock' | translate) }} </span>
+                  </button>
 
-                <button [routerLink]="['viewUser', item.id]" mat-menu-item (click)="openUserDialog(item.id)">
-                  <mat-icon style="color: #05A0E1;">visibility</mat-icon>
-                  <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
-                </button>
-                <button [routerLink]="['edit',item.id]" mat-menu-item>
-                  <mat-icon style="color: #feee00;">edit_square</mat-icon>
-                  <span style="color: #feee00;">{{'edit'|translate}}</span>
-                </button>
-              </mat-menu>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  <button [routerLink]="['viewUser', item.id]" mat-menu-item (click)="openUserDialog(item.id)">
+                    <mat-icon style="color: #05A0E1;">visibility</mat-icon>
+                    <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
+                  </button>
+                  <button [routerLink]="['edit',item.id]" mat-menu-item>
+                    <mat-icon style="color: #feee00;">edit_square</mat-icon>
+                    <span style="color: #feee00;">{{'edit'|translate}}</span>
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <!-- Pagination -->
