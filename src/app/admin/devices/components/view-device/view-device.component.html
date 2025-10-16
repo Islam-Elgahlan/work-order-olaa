@@ -4,7 +4,7 @@
       <div class="details-header d-flex justify-content-between">
         <div class="d-flex align-items-center gap-2">
           <h6>{{ "devices.details" | translate }}</h6>
-          <button [routerLink]="['add-work-order', deviceData.id]" class="btn btn-outline-info">
+          <button [routerLink]="['add-work-order', deviceData?.id]" class="btn btn-outline-info">
             {{ "devices.add" | translate }}
           </button>
         </div>
@@ -12,7 +12,7 @@
 
       <div class="my-3">
         <h6>{{ "devices.basic_information" | translate }}</h6>
-        <img [src]="deviceData.image" [alt]="deviceData.name" />
+        <img [src]="deviceData?.image" [alt]="deviceData?.name" />
         <p class="mx-2">{{ deviceData?.name }}</p>
       </div>
       <hr class="my-3" />
@@ -22,21 +22,21 @@
           <div class="col-md-3 d-flex align-items-center justify-content-between p-0">
             <div class="mx-3">
               <h6>{{ "devices.department" | translate }}</h6>
-              <p>{{ deviceData?.department.name }}</p>
+              <p>{{ deviceData?.department?.name }}</p>
             </div>
             <div class="vertical-divider"></div>
           </div>
           <div class="col-md-3 d-flex align-items-center justify-content-between p-0">
             <div class="mx-4">
               <h6>{{ "devices.company" | translate }}</h6>
-              <p>{{ deviceData?.company.name }}</p>
+              <p>{{ deviceData?.company?.name }}</p>
             </div>
             <div class="vertical-divider"></div>
           </div>
           <div class="col-md-3 justify-content-center">
             <div class="mx-3">
               <h6>{{ "devices.model" | translate }}</h6>
-              <p>{{ deviceData?.model.name }}</p>
+              <p>{{ deviceData?.model?.name }}</p>
             </div>
           </div>
 
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="col-md-4 justify-content-center my-3">
-              <img [src]="deviceData.qr_code" [alt]="deviceData.model.name" class="w-25" />
+              <img [src]="deviceData?.qr_code" [alt]="deviceData?.model?.name" class="w-25" />
           </div>
         </div>
       </div>
@@ -84,10 +84,10 @@
               <div>
                 <span class="w-100"><img src="../../../../../assets/images/Avatar.png" alt="admin-img"
                     width="25" /></span>
-                <span class="me-2 fw-bold">فني {{work.technician.name}}</span>
+                <span class="me-2 fw-bold">فني {{work?.technician?.name}}</span>
               </div>
               <div class="ms-3">
-                <p>{{ work.start_date | date}}</p>
+                <p>{{ work?.start_date | date}}</p>
               </div>
             </div>
             <hr class="my-2" />
@@ -95,23 +95,23 @@
               <div class="d-flex gap-5">
                 <div>
                   <h6>{{ "devices.work_order_number" | translate }}</h6>
-                  <p>{{ work.number }}</p>
+                  <p>{{ work?.number }}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.order_type" | translate }}</h6>
-                  <p>{{ work.work_type.name }}</p>
+                  <p>{{ work?.work_type?.name }}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.creation_date" | translate }}</h6>
-                  <p>{{ work.created_at | date}}</p>
+                  <p>{{ work?.created_at | date}}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.execution_date" | translate }}</h6>
-                  <p>{{ deviceData.start_time | translate }}</p>
+                  <p>{{ deviceData?.start_time | translate }}</p>
                 </div>
               </div>
               <div>
-                <button class="btn bg-btn-device text-btn-device">{{ work.status.name }}</button>
+                <button class="btn bg-btn-device text-btn-device">{{ work?.status?.name }}</button>
               </div>
             </div>
           </div>
