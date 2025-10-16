@@ -14,6 +14,10 @@ export class LoginComponent {
   hideRequiredMarker: boolean = true;
   data: any
   ress: any
+  redirectUrl: any
+
+
+  // redirectUrl = localStorage.getItem('redirectUrl');
 
   constructor(private _AuthService: AuthService,
     private _ToastrService: ToastrService,
@@ -45,8 +49,13 @@ export class LoginComponent {
       },
       complete: () => {
         this._AuthService.getProfile();
-        this._Route.navigate(['/dashboard'])
-        this._ToastrService.success(this.ress.message,`hello ${this.data.name}`)
+        if (localStorage.getItem('redirectUrl')) {
+          this.redirectUrl = localStorage.getItem('redirectUrl');
+
+        }
+
+        this._Route.navigate([this.redirectUrl])
+        this._ToastrService.success(this.ress.message, `hello ${this.data.name}`)
 
       }
 

@@ -16,6 +16,9 @@ export class LogoutComponent {
     localStorage.removeItem('token')
     localStorage.removeItem('name')
     localStorage.removeItem('title')
+    localStorage.removeItem('id')
+    localStorage.removeItem('email')
+    localStorage.removeItem('redirectUrl')
 
     this.DialogRef.close();
     this._Router.navigate(['auth'])
