@@ -17,6 +17,9 @@ constructor(private _router:Router){
         return true;
         
           } else {
+            localStorage.setItem('redirectUrl',state.url)
+            // console.log(state.url);
+            
             this._router.navigate(['auth'])
            return false
           }
