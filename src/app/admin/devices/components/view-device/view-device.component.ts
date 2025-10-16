@@ -33,7 +33,7 @@ export class ViewDeviceComponent {
       next: (res) => {
         this._ToastrService.success(res.message, 'Get device Succesfuly');
         this.deviceData = res.data;
-        // console.log(this.deviceData);
+        console.log(this.deviceData);
       },
       error: (err) => {
         this._ToastrService.error(err.message, 'Error in Fetch device');

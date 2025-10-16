@@ -61,9 +61,7 @@
             </div>
           </div>
           <div class="col-md-4 justify-content-center my-3">
-            <a>
-              <img src="../../../../../assets/images/view-device.png" alt="view-device" />
-            </a>
+              <img [src]="deviceData.qr_code" [alt]="deviceData.model.name" class="w-25" />
           </div>
         </div>
       </div>
@@ -86,7 +84,7 @@
               <div>
                 <span class="w-100"><img src="../../../../../assets/images/Avatar.png" alt="admin-img"
                     width="25" /></span>
-                <span class="me-2 fw-bold"> {{work.technician}}فني</span>
+                <span class="me-2 fw-bold">فني {{work.technician.name}}</span>
               </div>
               <div class="ms-3">
                 <p>{{ work.start_date | date}}</p>
@@ -105,11 +103,11 @@
                 </div>
                 <div>
                   <h6>{{ "devices.creation_date" | translate }}</h6>
-                  <p>{{ work.start_date | date}}</p>
+                  <p>{{ work.created_at | date}}</p>
                 </div>
                 <div>
                   <h6>{{ "devices.execution_date" | translate }}</h6>
-                  <p>{{ deviceData.start_date }}</p>
+                  <p>{{ deviceData.start_time | translate }}</p>
                 </div>
               </div>
               <div>
