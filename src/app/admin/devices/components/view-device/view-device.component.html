@@ -10,10 +10,10 @@
         </div>
       </div>
 
-      <div class="my-3">
+      <div class="my-3 w-50">
         <h6>{{ "devices.basic_information" | translate }}</h6>
-        <img [src]="deviceData?.image" [alt]="deviceData?.name" />
-        <p class="mx-2">{{ deviceData?.name }}</p>
+        <img [src]="deviceData?.image" [alt]="deviceData?.name" class="w-25" />
+        <span>{{ deviceData?.name }}</span>
       </div>
       <hr class="my-3" />
       <!--Device Details -->
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="col-md-4 justify-content-center my-3">
-              <img [src]="deviceData?.qr_code" [alt]="deviceData?.model?.name" class="w-25" />
+            <img [src]="deviceData?.qr_code" [alt]="deviceData?.model?.name" class="w-25" />
           </div>
         </div>
       </div>
