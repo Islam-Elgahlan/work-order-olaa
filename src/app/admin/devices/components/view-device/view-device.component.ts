@@ -19,7 +19,7 @@ export class ViewDeviceComponent {
     private _ToastrService: ToastrService,
     private _activatedRoute:ActivatedRoute
   ) {
-    this.deviceId = _activatedRoute.snapshot.params['id'];
+    this.deviceId = _activatedRoute.snapshot.params['deviceId'];
     console.log(this.deviceId);
     
   }

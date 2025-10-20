@@ -13,38 +13,6 @@ import { DevicesService } from 'src/app/admin/devices/services/devices.service';
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent {
-  ngOnInit() {
-    this.getOrderById(this.orderId)
-    this.getworkType()
-    this.getBuilding()
-    this.getEqipment()
-    this.getSource()
-    this.getReport()
-    this.getDepartment()
-    this.onGetAllDevices()
-    this.getDeviceById(this.deviceId)
-  }
-
-  constructor(
-    private _activateRoute: ActivatedRoute,
-    private _WorkOrdersService: WorkOrdersService,
-    private _LookupsService: LookupsService,
-    private _ToastrService: ToastrService,
-    private _Router: Router,
-    private _HelperService: HelperService,
-    private _devicesService: DevicesService
-  ) {
-    this.deviceId = _activateRoute.snapshot.paramMap.get('deviceId');
-    console.log(this.deviceId);
-
-    this.orderId = this._activateRoute.snapshot.paramMap.get('id')
-    if (this.orderId) {
-      this.isUpdatePage = true;
-
-    } else {
-      this.isUpdatePage = false;
-    }
-  }
   isUpdatePage: boolean = false;
 
   data: any
@@ -75,6 +43,39 @@ export class AddComponent {
   pageSize: number | undefined = 5;
   page: number | undefined = 1;
 
+    constructor(
+    private _activateRoute: ActivatedRoute,
+    private _WorkOrdersService: WorkOrdersService,
+    private _LookupsService: LookupsService,
+    private _ToastrService: ToastrService,
+    private _Router: Router,
+    private _HelperService: HelperService,
+    private _devicesService: DevicesService
+  ) {
+    this.deviceId = _activateRoute.snapshot.paramMap.get('deviceId');
+    console.log(this.deviceId);
+
+    this.orderId = this._activateRoute.snapshot.paramMap.get('id')
+    if (this.orderId) {
+      this.isUpdatePage = true;
+
+    } else {
+      this.isUpdatePage = false;
+    }
+  }
+
+  ngOnInit() {
+    this.getOrderById(this.orderId)
+    this.getworkType()
+    this.getBuilding()
+    this.getEqipment()
+    this.getSource()
+    this.getReport()
+    this.getDepartment()
+    this.onGetAllDevices()
+    this.getDeviceById(this.deviceId)
+  }
+  
   orderForm = new FormGroup(
     {
       start_date: new FormControl(null),
