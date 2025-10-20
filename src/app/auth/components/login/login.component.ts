@@ -51,10 +51,12 @@ export class LoginComponent {
         this._AuthService.getProfile();
         if (localStorage.getItem('redirectUrl')) {
           this.redirectUrl = localStorage.getItem('redirectUrl');
+          this._Route.navigate([this.redirectUrl])
+        }else{
+        this._Route.navigate(['/dashboard'])
 
         }
 
-        this._Route.navigate([this.redirectUrl])
         this._ToastrService.success(this.ress.message, `hello ${this.data.name}`)
 
       }
