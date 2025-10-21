@@ -8,7 +8,6 @@ import { ViewDeviceComponent } from './components/view-device/view-device.compon
 import { AllDevicesComponent } from './components/all-devices/all-devices.component';
 import { A11yModule } from "@angular/cdk/a11y";
 
-
 @NgModule({
   declarations: [
     AddEditDeviceComponent,

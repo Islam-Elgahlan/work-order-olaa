@@ -9,7 +9,8 @@
                                 <span>{{'welcome' | translate}}</span>
                                 <p><a routerLink="/dashboard/admin/work-orders">{{'orders.orders' | translate}}</a> > >
                                     <span>{{ isUpdatePage ? ('orders.editOrder' | translate) : ('orders.addOrder' |
-                                        translate) }}</span></p>
+                                        translate) }}</span>
+                                </p>
 
                                 <!-- <h3 class="fs-3">
                                     {{ isUpdatePage ? ('orders.editOrder' | translate) : ('orders.addOrder' |
@@ -38,7 +39,7 @@
                                     <mat-select (selectionChange)="onselectDepartment()" [(value)]="departmentId"
                                         formControlName="department_id">
                                         <mat-option *ngFor="let item of departments" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -49,7 +50,7 @@
                                     <mat-label>{{'orders.engineer' | translate}}</mat-label>
                                     <mat-select formControlName="engineer_id">
                                         <mat-option *ngFor="let item of engineers" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -60,7 +61,7 @@
                                     <mat-label>{{'orders.technician' | translate}}</mat-label>
                                     <mat-select formControlName="technician_id">
                                         <mat-option *ngFor="let item of technicians" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -71,7 +72,7 @@
                                     <mat-label>{{'orders.workType' | translate}}</mat-label>
                                     <mat-select formControlName="work_type_id">
                                         <mat-option *ngFor="let item of workType" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -82,7 +83,7 @@
                                     <mat-label>{{'orders.building' | translate}}</mat-label>
                                     <mat-select formControlName="building_id">
                                         <mat-option *ngFor="let item of building" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -141,7 +142,7 @@
                                     <mat-label>{{'orders.equipment'| translate}}</mat-label>
                                     <mat-select formControlName="equipment_id">
                                         <mat-option *ngFor="let item of equipment" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -152,7 +153,7 @@
                                     <mat-label>{{'orders.source'| translate}}</mat-label>
                                     <mat-select formControlName="source_id">
                                         <mat-option *ngFor="let item of source" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -161,9 +162,9 @@
                             <div *ngIf="!deviceId" class="col-md-4">
                                 <mat-form-field class="w-100" [hideRequiredMarker]="hideRequiredMarker">
                                     <mat-label>{{'orders.device'| translate}}</mat-label>
-                                    <mat-select [(ngModel)]="deviceId" >
+                                    <mat-select [(ngModel)]="deviceId">
                                         <mat-option *ngFor="let item of devices" [value]="item.id">
-                                            {{item.name}}
+                                            {{item?.name}}
                                         </mat-option>
                                     </mat-select>
                                 </mat-form-field>
@@ -171,8 +172,8 @@
                             <div *ngIf="deviceId" class="col-md-4">
                                 <mat-form-field class="w-100" [hideRequiredMarker]="hideRequiredMarker">
                                     <mat-label>{{'orders.device'| translate}}</mat-label>
-                                    <mat-select [disabled]="true" [value]="deviceId"  >
-                                        <mat-option [value]="deviceId" >
+                                    <mat-select [disabled]="true" [value]="deviceId">
+                                        <mat-option [value]="deviceId">
                                             {{deviceData.name}}
                                         </mat-option>
                                     </mat-select>

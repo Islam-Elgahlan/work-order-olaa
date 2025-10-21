@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:'',component:AllDevicesComponent},
   {path:'devices',component:AllDevicesComponent},
   {path:'add-edit-device',component:AddEditDeviceComponent},
-  {path:'view-device/:id',component:ViewDeviceComponent},
-  {path:'view-device/:id/add-work-order/:deviceId',component:AddComponent},
+  {path:'view-device/:deviceId',component:ViewDeviceComponent},
+  {path:'view-device/:deviceId/add-work-order',component:AddComponent},
 
 ];
 @NgModule({
