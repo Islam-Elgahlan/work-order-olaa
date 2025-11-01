@@ -131,8 +131,12 @@
     "holding_reason": "سبب التعليق "
   },
   "department": {
-    "department": "الأقسام",
-    "add": "اضافة قسم جديد",
+    "department": "إدارة الأقسام",
+    "total-departments": "إجمالي الأقسام",
+    "medical-departments": "الأقسام الطبية",
+    "administrative-departments": "الأقسام الإدارية",
+    "inactive-departments": "الأقسام غير النشطة",
+    "add": "اضافة قسم",
     "view": "معاينة",
     "edit": "تعديل",
     "name": "الأسم",
@@ -145,8 +149,11 @@
     }
   },
   "building": {
-    "building": "المباني",
-    "add": "اضافة مبنى جديد",
+    "buildings": "إدارة المباني والمنشآت",
+    "total-buildings": "إجمالي المباني",
+    "main-buildings": "مباني رئيسية",
+    "service-buildings": "مباني خدمات",
+    "add": "اضافة مبنى",
     "edit-new": "تحديث مبنى",
     "view": "معاينة",
     "edit": "تعديل",
@@ -158,7 +165,7 @@
   },
   "sources": {
     "sources": "المصادر",
-    "add": "اضافة مصدر جديد",
+    "add": "اضافة مصدر",
     "edit-new": "تحديث مصدر",
     "view": "معاينة",
     "edit": "تعديل",
@@ -172,7 +179,11 @@
   },
   "equipments": {
     "equipments": "المعدات",
-    "add": "اضافة معدة جديد",
+    "add": "اضافة معدة",
+    "total-equipment": "إجمالي المعدات",
+    "active-equipment": "المعدات النشطة",
+    "equipment-maintenance": "المعدات في الصيانة",
+    "out-of-service": "المعدات المعطلة",
     "edit-new": "تحديث معدة",
     "view": "معاينة",
     "edit": "تعديل",
@@ -183,6 +194,11 @@
   },
   "reports": {
     "reports": "التقارير",
+    "total-work-orders": "إجمالي أوامر العمل",
+    "equipment-in-operation": "المعدات العاملة",
+    "background": "مسند",
+    "closed": "مغلق",
+    "open": "مفتوحة",
     "department": "القسم",
     "engineer": "المهندس",
     "technician": "الفني",
@@ -203,6 +219,7 @@
     "print": "طباعة"
   },
   "devices": {
+    "devices": "الاجهزه",
     "active": "فعالة",
     "notActive": "تحت الصيانة",
     "type": "نوع الجهاز",
@@ -212,9 +229,10 @@
     "company": "الشركة المصنعة",
     "details": " تفاصيل الجهاز",
     "add": "اضافة امر عمل جديد",
+    "add_device": "اضافة جهاز",
+    "add_New_device": "إضافة جهاز جديد",
+    "edit_device": "تعديل جهاز",
     "department": "القسم",
-    "model": "الموديل",
-    "serial_number": "رقم السيريال",
     "purchase_date": "تاريخ الشراء",
     "warranty_period": "مدة الضمان",
     "basic_information": "معلومات أساسية",
@@ -227,6 +245,19 @@
     "execution_date": "تاريخ التنفيذ",
     "in_progress": "قيد التنفيذ",
     "edit": "تعديل",
-    "close": "الغاء"
+    "close": "الغاء",
+    "name_ar": "الاسم بالعربية",
+    "name_en": "الاسم بالانجليذية",
+    "device_type": "نوع الجهاز",
+    "code": "رقم الكود (اختيارى)",
+    "code_number": "رقم الكود",
+    "manufacturer": "الشركة المصنعة",
+    "model": "الموديل",
+    "serial_number": "رقم السيريال",
+    "description_ar": "الوصف",
+    "status": "الحالة",
+    "confirm":"تمت الاضافة",
+    "confirm_add":"تم اضافة جهاز بنجاح",
+    "custodians":"امناء الجهاز"
   }
 }

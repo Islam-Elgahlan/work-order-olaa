@@ -97,12 +97,18 @@ export class SidebarComponent {
       link: '/dashboard/admin/users',
       isActive: this.isAdmin(),
     },
-            {
+    {
       icon: 'fa-solid fa-toolbox fs-4',
       title: this.translate.instant('sidebar.devices'),
       link: '/dashboard/admin/devices',
       isActive: this.isAdmin(),
     },
+    // {
+    //   icon: 'fa-solid fa-toolbox fs-4',
+    //   title: this.translate.instant('sidebar.devices'),
+    //   link: '/dashboard/admin/devices',
+    //   isActive: this.isAdmin(),
+    // },
     {
       icon: 'fa-solid fa-sitemap fs-4',
       title: this.translate.instant('sidebar.departments'),
@@ -140,7 +146,7 @@ export class SidebarComponent {
       link: '/dashboard/engineer/work-orders',
       isActive: this.isEngineer(),
     },
-           {
+    {
       icon: 'fa-solid fa-toolbox fs-4',
       title: this.translate.instant('sidebar.devices'),
       link: '/dashboard/engineer/devices',
@@ -152,7 +158,7 @@ export class SidebarComponent {
       link: '/dashboard/technicians/work-orders',
       isActive: this.isTechnician(),
     },
-           {
+    {
       icon: 'fa-solid fa-toolbox fs-4',
       title: this.translate.instant('sidebar.devices'),
       link: '/dashboard/technicians/devices',

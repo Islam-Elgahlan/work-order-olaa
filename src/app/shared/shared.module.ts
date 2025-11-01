@@ -15,6 +15,7 @@ import { NotificationListComponent } from './notification-list/notification-list
 import { MaterialModule } from './material/material/material.module';
 import { SecNavComponent } from './sec-nav/sec-nav.component';
 import { LogoutComponent } from './sec-nav/logout/logout.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
     LogoutComponent,
     DeleteItemComponent,
     NotificationListComponent,
-    SecNavComponent
+    SecNavComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,

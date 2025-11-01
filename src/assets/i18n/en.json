@@ -129,7 +129,11 @@
         "holding_reason": "Holding Reason"
     },
     "department": {
-        "department": "Departments",
+        "department": "Department Management",
+        "total-departments": "Total Departments",
+        "medical-departments": "Medical Departments",
+        "administrative-departments": "Administrative Departments",
+        "inactive-departments": "Inactive Departments",
         "add": " Add New Department",
         "view": "View",
         "edit": "Edit",
@@ -143,8 +147,11 @@
         }
     },
     "building": {
-        "building": "Building",
-        "add": "Add New Building",
+        "buildings": "Buildings and Facilities Management",
+        "total-buildings": "Total Buildings",
+        "main-buildings": "Main Buildings",
+        "service-buildings": "Service Buildings",
+        "add": "Add Building",
         "edit-new": "Edit Building",
         "view": "View",
         "edit": "Edit",
@@ -156,7 +163,7 @@
     },
     "sources": {
         "sources": "source",
-        "add": "Add New source",
+        "add": "Add source",
         "edit-new": "Edit source",
         "view": "View",
         "edit": "Edit",
@@ -170,7 +177,11 @@
     },
     "equipments": {
         "equipments": "source",
-        "add": "Add New source",
+        "add": "Add source",
+        "total-equipment": "Total Equipment",
+        "active-equipment": "Active Equipment",
+        "equipment-maintenance": "Equipment Under Maintenance",
+        "out-of-service": "Out of Service",
         "edit-new": "Edit source",
         "view": "View",
         "edit": "Edit",
@@ -181,6 +192,11 @@
     },
     "reports": {
         "reports": "Reports",
+        "total-work-orders": "Total work orders",
+        "equipment-in-operation": "Equipment in operation",
+        "background": "Background",
+        "closed": "Closed",
+        "open": "Open",
         "department": "department",
         "engineer": "engineer",
         "technician": "technician",
@@ -201,6 +217,7 @@
         "print": "print"
     },
     "devices": {
+        "devices": "Devices",
         "active": "Active",
         "notActive": "Under Maintenance",
         "type": "Type",
@@ -209,10 +226,11 @@
         "name": "Device name",
         "company": "Company",
         "details": "devices Details",
-        "add": "Add New device",
+        "add": "Add New Work Order",
+        "add_device": "Add device",
+        "add_New_device": "Add device",
+        "edit_device": "Edit device",
         "department": "department",
-        "model": "model",
-        "serial_number": "Serial Number",
         "purchase_date": "Purchase Date",
         "warranty_period": "Warranty Period",
         "basic_information": "Basic information",
@@ -225,6 +243,19 @@
         "execution_date": "Execution Date",
         "in_progress": "In Progress",
         "edit": "Edit",
-        "close": "Close"
+        "close": "Close",
+        "name_ar": "Name in Arabic",
+        "name_en": "Name in English",
+        "device_type": "Device type",
+        "code": "Code number (optional)",
+        "code_number": "Code number",
+        "manufacturer": "Manufacturer",
+        "model": "model",
+        "serial_number": "serial_number",
+        "description_ar": "description",
+        "status": "Status",
+        "confirm": "Added",
+        "confirm_add": "A device was successfully added.",
+        "custodians":"Custodians"
     }
 }

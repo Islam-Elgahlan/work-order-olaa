@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DevicesService {
-  constructor(private _HttpClient: HttpClient) {}
+  constructor(private _HttpClient: HttpClient) { }
 
   addNewDevice(data: any): Observable<any> {
     return this._HttpClient.post('devices/create', data);
@@ -29,6 +29,21 @@ export class DevicesService {
   //   return this._HttpClient.get('work-orders/lookups/titles');
   // }
   onGetDepartment(): Observable<any> {
-    return this._HttpClient.get('work-orders/lookups/departments');
+    return this._HttpClient.get('departments');
+  }
+  onGetDeviceModel(): Observable<any> {
+    return this._HttpClient.get('device_models');
+  }
+  onGetDeviceManufacturers(): Observable<any> {
+    return this._HttpClient.get('device_manufacturers');
+  }
+  onGetDeviceType(): Observable<any> {
+    return this._HttpClient.get('device_types');
+  }
+  onGetCustodians(): Observable<any> {
+    return this._HttpClient.get('auth/get_custodians/10');
+  }
+  onGetDeviceStatus(): Observable<any> {
+    return this._HttpClient.get('device_statuses');
   }
 }
