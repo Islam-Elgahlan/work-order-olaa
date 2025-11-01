@@ -162,7 +162,7 @@ export class AddEditDeviceComponent {
   // Confirm
   openConfirm() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '50%'
+      width: '40%'
     });
   }
 
