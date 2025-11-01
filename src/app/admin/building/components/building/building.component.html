@@ -1,8 +1,43 @@
 <section>
     <div class="table-card container py-5 ">
         <div class="d-flex justify-content-between all-orders ">
-            <h4>{{'building.building' | translate}}</h4>
-            <button (click)="openAddBuilding()" class="primary text-center addbtn mx-4">{{'addnew'|translate}}</button>
+            <h4>{{'building.buildings' | translate}}</h4>
+            <button (click)="openAddBuilding()" class="primary text-center addbtn mx-4">{{'building.add'|translate}}</button>
+        </div>
+          <div class="container">
+            <div class="row my-3  gap-2 ">
+                <!-- total-buildings -->
+                <div class="all-orders col d-flex">
+                    <div class="col-md-2 icon mt-3">
+                        <i style="color: #3575DD;" class="fa-solid fa-sitemap fs-4 rounded-circle"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <h1 class="me-2">47</h1>
+                        <h4 style="color: #3575DD;">{{'building.total-buildings' | translate}}</h4>
+                    </div>
+
+                </div>
+                <!-- main-buildings -->
+                <div class="all-orders col d-flex  ">
+                     <div class="col-md-2 icon mt-3">
+                        <i style="color: #1FB155;" class="fa-solid fa-toolbox fs-4 rounded-circle"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <h1 class="me-2">42</h1>
+                        <h4 style="color: #1FB155;">{{'building.main-buildings' | translate}}</h4>
+                    </div>
+                </div>
+                <!-- service-buildings -->
+                <div class="all-orders col d-flex  ">
+                     <div class="col-md-2 icon mt-3">
+                        <i style="color: #D3A107;" class="fa-solid fa-toolbox fs-4 rounded-circle"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <h1 class="me-2">560</h1>
+                        <h4 style="color: #D3A107;">{{'building.service-buildings' | translate}}</h4>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- table -->
         <div class="container all-orders mt-3">

@@ -3,7 +3,7 @@
         <!-- Header -->
         <div class="d-flex justify-content-between all-orders ">
             <h4>{{'sidebar.devices' | translate}}</h4>
-            <button routerLink="add-edit-device" class="primary text-center addbtn mx-4">{{'addnew'|translate}}</button>
+            <button routerLink="add-device" class="primary text-center addbtn mx-4">{{'addnew'|translate}}</button>
         </div>
         <!-- cards -->
         <div class="container">
@@ -109,7 +109,7 @@
                                         <mat-icon style="color: #05A0E1;">visibility</mat-icon>
                                         <span style="color: #05A0E1;">{{'users.view' | translate}}</span>
                                     </button>
-                                    <button [routerLink]="['edit',item.id]" mat-menu-item>
+                                    <button [routerLink]="['add-device',item.id]" mat-menu-item>
                                         <mat-icon style="color: #feee00;">edit_square</mat-icon>
                                         <span style="color: #feee00;">{{'edit'|translate}}</span>
                                     </button>

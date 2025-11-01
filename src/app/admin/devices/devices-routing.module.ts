@@ -8,7 +8,8 @@ import { AddComponent } from '../work-orders/components/add/add.component';
 const routes: Routes = [
   {path:'',component:AllDevicesComponent},
   {path:'devices',component:AllDevicesComponent},
-  {path:'add-edit-device',component:AddEditDeviceComponent},
+  {path:'add-device',component:AddEditDeviceComponent},
+  {path:'add-device/:id',component:AddEditDeviceComponent},
   {path:'view-device/:deviceId',component:ViewDeviceComponent},
   {path:'view-device/:deviceId/add-work-order',component:AddComponent},
 

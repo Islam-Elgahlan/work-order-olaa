@@ -50,7 +50,7 @@ export class BuildingComponent {
       next: (res) => {
         this.tableResponse = res;
         this.tableData = res?.data;
-        this.spinner.hide()
+        this.spinner.hide();
       }
     });
   }
